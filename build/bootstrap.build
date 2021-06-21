@@ -1,0 +1,7 @@
+project = libauto-symexport
+
+using version
+using config
+using test
+using install
+using dist

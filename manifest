@@ -1,0 +1,12 @@
+: 1
+name: libauto-symexport
+version: 0.1.0-a.0.z
+summary: Test automatic symbol exporting on Windows
+license: MIT
+description-file: README.md
+url: https://example.org/libauto-symexport
+email: boris@codesynthesis.com
+#build-error-email: boris@codesynthesis.com
+depends: * build2 >= 0.13.0
+depends: * bpkg >= 0.13.0
+#depends: libhello ^1.0.0

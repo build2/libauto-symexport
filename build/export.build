@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libauto-symexport/
+}
+
+export $out_root/libauto-symexport/$import.target
