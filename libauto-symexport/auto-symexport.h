@@ -7,7 +7,7 @@ extern "C"
 {
 #endif
 
-LIBAUTO_SYMEXPORT_SYMEXPORT  void
+LIBAUTO_SYMEXPORT_SYMEXPORT void
 c_say_hello (const char*);
 
 LIBAUTO_SYMEXPORT_SYMEXPORT extern int _c_data;

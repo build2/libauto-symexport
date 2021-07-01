@@ -15,6 +15,8 @@ namespace auto_symexport
     o << "Hello, " << n << '!' << endl;
   }
 
+  string say_hello_data = "Hello data";
+
   test::test ()
   {
   }

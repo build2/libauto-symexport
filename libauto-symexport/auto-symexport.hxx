@@ -10,6 +10,9 @@ namespace auto_symexport
   LIBAUTO_SYMEXPORT_SYMEXPORT void
   say_hello (std::ostream&, const std::string& name);
 
+  LIBAUTO_SYMEXPORT_SYMEXPORT
+  extern std::string say_hello_data;
+
   class LIBAUTO_SYMEXPORT_SYMEXPORT test
   {
   public:
@@ -32,4 +35,4 @@ namespace auto_symexport
 
 // For some reason this ends up in BSS only from C++ TU.
 //
-LIBAUTO_SYMEXPORT_SYMEXPORT extern "C" int _c_bss;
+extern "C" LIBAUTO_SYMEXPORT_SYMEXPORT int _c_bss;
