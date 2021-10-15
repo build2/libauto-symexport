@@ -19,7 +19,8 @@ else
 {
   # An alternative setup that uses the .def file even for MinGW.
   #
-  using bin.def
+  if ($cxx.target.class == 'windows')
+    using bin.def
 
   lib{auto-symexport}: def{auto-symexport}: include = ($cxx.target.class == 'windows')
   def{auto-symexport}: libul{auto-symexport}
