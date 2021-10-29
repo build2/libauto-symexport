@@ -9,7 +9,7 @@ lib{auto-symexport}: libul{auto-symexport}: \
 #
 if false
 {
-  lib{auto-symexport}: def{auto-symexport}: include = ($cxx.target.system == 'win32-msvc')
+  libs{auto-symexport}: def{auto-symexport}: include = ($cxx.target.system == 'win32-msvc')
   def{auto-symexport}: libul{auto-symexport}
 
   if ($cxx.target.system == 'mingw32')
@@ -22,7 +22,7 @@ else
   if ($cxx.target.class == 'windows')
     using bin.def
 
-  lib{auto-symexport}: def{auto-symexport}: include = ($cxx.target.class == 'windows')
+  libs{auto-symexport}: def{auto-symexport}: include = ($cxx.target.class == 'windows')
   def{auto-symexport}: libul{auto-symexport}
 }
 

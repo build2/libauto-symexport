@@ -13,6 +13,8 @@ c_say_hello (const char*);
 LIBAUTO_SYMEXPORT_SYMEXPORT extern int _c_data;
 LIBAUTO_SYMEXPORT_SYMEXPORT extern const int _c_rdata;
 
+LIBAUTO_SYMEXPORT_SYMEXPORT extern int _c_common[3];
+
 #ifdef __cplusplus
 }
 #endif
