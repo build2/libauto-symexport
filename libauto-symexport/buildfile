@@ -7,24 +7,21 @@ lib{auto-symexport}: libul{auto-symexport}: \
 
 # Export all symbols.
 #
-if false
-{
-  libs{auto-symexport}: def{auto-symexport}: include = ($cxx.target.system == 'win32-msvc')
-  def{auto-symexport}: libul{auto-symexport}
+#\
+libs{auto-symexport}: def{auto-symexport}: include = ($cxx.target.system == 'win32-msvc')
+def{auto-symexport}: libul{auto-symexport}
 
-  if ($cxx.target.system == 'mingw32')
-    cxx.loptions += -Wl,--export-all-symbols
-}
-else
-{
-  # An alternative setup that uses the .def file even for MinGW.
-  #
-  if ($cxx.target.class == 'windows')
-    using bin.def
+if ($cxx.target.system == 'mingw32')
+  cxx.loptions += -Wl,--export-all-symbols
+#\
 
-  libs{auto-symexport}: def{auto-symexport}: include = ($cxx.target.class == 'windows')
-  def{auto-symexport}: libul{auto-symexport}
-}
+# An alternative setup that uses the .def file even for MinGW.
+#
+if ($cxx.target.class == 'windows')
+  using bin.def
+
+libs{auto-symexport}: def{auto-symexport}: include = ($cxx.target.class == 'windows')
+def{auto-symexport}: libul{auto-symexport}
 
 # Include the generated version header into the distribution (so that we don't
 # pick up an installed one) and don't remove it when cleaning in src (so that
